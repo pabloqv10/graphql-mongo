@@ -7,7 +7,10 @@ const { makeExecutableSchema } = require('graphql-tools')
 const { merge } = require('lodash')
 
 const courseTypesDef = require('./types/course.types')
+const userTypesDef = require('./types/user.types')
+
 const courseResolvers = require('./resolvers/course.resolvers')
+const userResolvers = require('./resolvers/user.resolvers')
 
 mongoose.connect('mongodb://localhost/graphql_db_course', {useNewUrlParser : true})
 
@@ -28,8 +31,8 @@ type Mutation {
 const resolvers = {}
 
 const schema = makeExecutableSchema({
-  typeDefs: [typeDefs, courseTypesDef],
-  resolvers: merge(resolvers, courseResolvers)
+  typeDefs: [typeDefs, courseTypesDef, userTypesDef],
+  resolvers: merge(resolvers, courseResolvers, userResolvers)
 })
 
 app.use('/graphql', bodyParser.json(), graphqlExpress({
