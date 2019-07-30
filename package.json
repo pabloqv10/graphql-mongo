@@ -19,11 +19,15 @@
   },
   "homepage": "https://github.com/pabloqv10/graphql-mongo#readme",
   "dependencies": {
+    "apollo-server-express": "^2.7.2",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql": "^14.4.1",
     "graphql-server-express": "^1.4.0",
     "graphql-tools": "^4.0.5",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.11",
     "mongoose": "^5.6.2"
   }
